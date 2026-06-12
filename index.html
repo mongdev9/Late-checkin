@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกเข้างานสาย (Late Check-in)</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <div class="header">
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <h1>ลงเวลาเข้างานสาย</h1>
+                <p id="liveClock" class="live-clock"></p>
+                <p>กรุณากรอกข้อมูลเพื่อบันทึกเวลา</p>
+            </div>
+            
+            <form id="checkinForm">
+                <div class="input-group">
+                    <label for="empId">รหัสพนักงาน</label>
+                    <input type="text" id="empId" name="empId" placeholder="เช่น 1001" required autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <label for="empName">ชื่อ - นามสกุล</label>
+                    <input type="text" id="empName" name="empName" placeholder="เช่น สมชาย ใจดี" required autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <label for="empDivision">ฝ่าย</label>
+                    <input type="text" id="empDivision" name="empDivision" placeholder="เช่น บริหาร, ผลิต" required autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <label for="empDept">แผนก</label>
+                    <input type="text" id="empDept" name="empDept" placeholder="เช่น บุคคล, ไอที" required autocomplete="off">
+                </div>
+                
+                <button type="submit" id="submitBtn">
+                    <span>บันทึกข้อมูล</span>
+                    <div class="spinner" id="spinner"></div>
+                </button>
+            </form>
+            
+            <div id="statusMessage" class="status-message hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                <p>บันทึกข้อมูลสำเร็จ!<br><small id="timeRecorded"></small></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -47,7 +47,10 @@ form.addEventListener('submit', async (e) => {
     const empDivision = empDivisionInput.value.trim();
     const empDept = empDeptInput.value.trim();
     
-    if (!empId || !empName || !empDivision || !empDept) return;
+    if (!empId || !empName || !empDivision || !empDept) {
+        alert("กรุณากรอกข้อมูล รหัส, ชื่อ, ฝ่าย และ แผนก ให้ครบถ้วนก่อนบันทึก");
+        return;
+    }
     
     // Save to local storage for next time
     localStorage.setItem('empId', empId);
